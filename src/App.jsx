@@ -14,13 +14,13 @@ import Resume from './Resume'
 import KanbanBoard from './KanbanBoard'
 import SnakeAndLadders from './SnakeAndLadders'
 import BMI from './BMI'
-import Stopwatch from './Stopwatch'
 import MongoDB_Authentication from './MongoDB_Authentication'
 import MongoDB_SIgnUp from './MongoDB_SIgnUp'
 import Users from './Users'
 import UpdateUsers from './updateUsers'
 import CreateUsers from './CreateUsers'
 import ImageDB from './ImageDB'
+import Stopwatch from './Stopwatch'
 
 
 function App() {

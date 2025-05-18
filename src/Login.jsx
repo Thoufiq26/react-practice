@@ -21,7 +21,7 @@ function Login() {
         toast.success("Log in Successful!", {
           position: "top-right",
         });
-        navigate("/game");
+        navigate("/profile");
       }
     } catch (e) {
       console.error("Login error:", e.message);
@@ -37,7 +37,7 @@ function Login() {
       toast.success("Signed in with Google!", {
         position: "top-right",
       });
-      navigate("/game");
+      navigate("/profile");
     } catch (error) {
       console.error("Google Sign-In Error:", error);
       toast.error("Google sign-in failed!", {

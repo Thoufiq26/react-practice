@@ -35,7 +35,7 @@ function SignUp() {
       toast.success("User Registered Successfully", {
         position: "top-center",
       });
-      navigate("/game");
+      navigate("/profile");
     } catch (e) {
       console.log(e.message);
       toast.error(e.message, {
@@ -52,6 +52,7 @@ function SignUp() {
         email: user.email,
         firstName: user.displayName?.split(" ")[0] || "",
         secondName: user.displayName?.split(" ")[1] || "",
+        Balance:1000
       });
       toast.success("Signed in with Google!", {
         position: "top-center",

@@ -104,7 +104,7 @@ function Game() {
       setResultMessage(message);
       updateBalanceInFirestore(newBalance);
       setIsRolling(false);
-    }, 1000); // 
+    }, 1000); 
   };
 
   const selectBet = (bet) => {
@@ -124,7 +124,7 @@ function Game() {
     <div>
       {userDetails ? (
         <>
-          <h1>Welcome {userDetails.firstName}</h1>
+          <h1 className='welcome'>Welcome {userDetails.firstName}</h1>
           <button type="submit" className="logout" onClick={Logout}>
             Log Out
           </button>

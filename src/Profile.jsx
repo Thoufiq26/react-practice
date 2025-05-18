@@ -1,54 +1,51 @@
-import { doc, getDoc } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
-import { auth, db } from "./Firebase";
-import { toast } from "react-toastify";
-import { Navigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function Profile() {
-  const [userDetails, setUserDetails] = useState(null);
-
-  const fetchUserData = async () => {
-    auth.onAuthStateChanged(async (user) => {
-      const docRef = doc(db, "Users", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setUserDetails(docSnap.data());
-      } else {
-        console.log("User not logged in!");
-        toast.error("User not logged in!");
-      }
-    });
-  };
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  const Logout = async () => {
-    try {
-      await auth.signOut();
-      window.location.href = "/login";
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
+function Dashboard() {
+  const navigate = useNavigate();
 
   return (
-    <div>
-      {userDetails ? (
-        <>
-          <h1>Welcome to the site {userDetails.firstName}</h1>
-          <div>
-            <h1>email : {userDetails.email}</h1>
-          </div>{" "}
-          <button type="submit" className="logout" onClick={Logout}>
-            Log Out
-          </button>
-        </>
-      ) : (
-        <h1>Loading....</h1>
-      )}
+    <div className="dashboard">
+      <div className="content">
+      <h1 className="choose">Choose an Option</h1>
+      <button className="button-33" onClick={() => navigate("/game")}>
+        Play Seven Up Seven Down
+      </button>
+      <button className="button-33" onClick={() => navigate("/expense-tracker")}>
+        Go to Expense Tracker
+      </button>
+      <button className="button-33" onClick={() => navigate("/resume")}>
+        Go to Resume
+      </button>
+      <button className="button-33" onClick={() => navigate("/kanban")}>
+        Kanban Board
+      </button>
+      <button className="button-33" onClick={() => navigate("/snake")}>
+        Snake & Ladders
+      </button>
+      <button className="button-33" onClick={() => navigate("/bmi")}>
+        Calculate your BMI
+      </button>
+      <button className="button-33" onClick={() => navigate("/stop-watch")}>
+        StopWatch
+      </button>
+       <button className="button-33" onClick={() => navigate("/mongodb-login")}>
+        MongoDB LogIn
+      </button>
+       <button className="button-33" onClick={() => navigate("/mongodb-signup")}>
+        MongoDB SignUp
+      </button>
+       <button className="button-33" onClick={() => navigate("/users")}>
+        MongoDB CRUD
+      </button>
+       <button className="button-33" onClick={() => navigate("/image-upload")}>
+        Upload Image to MongoDB
+      </button>
+    
+      </div>
+    
     </div>
   );
 }
 
-export default Profile;
+export default Dashboard;

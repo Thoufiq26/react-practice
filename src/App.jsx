@@ -20,7 +20,7 @@ import Users from './Users'
 import UpdateUsers from './UpdateUsers'
 import CreateUsers from './CreateUsers'
 import ImageDB from './ImageDB'
-import Stopwatch from './Stopwatch'
+// import Stopwatch from './Stopwatch'
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
     <Route path="/kanban" element={<KanbanBoard/>}/>
     <Route path="/snake" element={<SnakeAndLadders/>}/>
     <Route path="/bmi" element={<BMI/>}/>
-    <Route path="/stop-watch" element={<Stopwatch/>}/>
+    {/* <Route path="/stop-watch" element={<Stopwatch/>}/> */}
     <Route path="/mongodb-login" element={<MongoDB_Authentication/>}/>
     <Route path="/mongodb-signup" element={<MongoDB_SIgnUp/>}/>
     <Route path="/users" element={<Users/>}/>
